@@ -1038,6 +1038,7 @@ void ex_messages(void *const eap_p)
       }
     }
     ui_call_msg_history_show(entries);
+    wait_return(false);
   } else {
     msg_hist_off = true;
     for (; p != NULL && !got_int; p = p->next) {
