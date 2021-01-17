@@ -1057,6 +1057,10 @@ function Screen:_handle_msg_history_show(entries)
   self.msg_history = entries
 end
 
+function Screen:_handle_msg_history_clear()
+  self.msg_history = {}
+end
+
 function Screen:_clear_block(grid, top, bot, left, right)
   for i = top, bot do
     self:_clear_row_section(grid, i, left, right)
