@@ -302,7 +302,7 @@ describe('ui/ext_messages', function()
       {1:~                        }|
       {1:~                        }|
       {1:~                        }|
-    ]], messages={
+    ]], msg_history={
       {kind="echoerr", content={{"raa", 2}}},
       {kind="echoerr", content={{"bork", 2}}},
       {kind="echoerr", content={{"fail", 2}}},
@@ -453,9 +453,10 @@ describe('ui/ext_messages', function()
       alphpabe^t                |
       {1:~                        }|
       {1:~                        }|
-    ]], messages={
-      {kind="echomsg", content={{"stuff"}}},
-    }}
+    ]], msg_history={ {
+          content = { { "stuff" } },
+          kind = "echomsg",
+    } }, showmode={ { "-- INSERT --", 3 } }}
   end)
 
   it('&showmode with macro-recording message', function()
@@ -681,7 +682,7 @@ describe('ui/ext_messages', function()
       {1:~                        }|
       {1:~                        }|
       {1:~                        }|
-    ]], messages={
+    ]], msg_history={
       {kind="echomsg", content={{"howdy"}}},
       {kind="", content={{"Type  :qa  and press <Enter> to exit Nvim"}}},
       {kind="echoerr", content={{"bork", 2}}},
