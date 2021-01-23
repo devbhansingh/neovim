@@ -308,7 +308,10 @@ describe('ui/ext_messages', function()
       {kind="echoerr", content={{"fail", 2}}},
       {kind="echoerr", content={{"extrafail", 2}}},
       {kind="echoerr", content={{"problem", 2}}}
-    }}
+    }, messages={{
+      content = {{ "Press ENTER or type command to continue", 4 }},
+      kind = "return_prompt"
+    }}}
   end)
 
   it('shortmess-=S', function()
@@ -456,7 +459,11 @@ describe('ui/ext_messages', function()
     ]], msg_history={ {
           content = { { "stuff" } },
           kind = "echomsg",
-    } }, showmode={ { "-- INSERT --", 3 } }}
+    } }, showmode={ { "-- INSERT --", 3 } },
+      messages={{
+        content = {{ "Press ENTER or type command to continue", 4}},
+        kind = "return_prompt"
+    }}}
   end)
 
   it('&showmode with macro-recording message', function()
@@ -687,7 +694,10 @@ describe('ui/ext_messages', function()
       {kind="", content={{"Type  :qa  and press <Enter> to exit Nvim"}}},
       {kind="echoerr", content={{"bork", 2}}},
       {kind="emsg", content={{"E117: Unknown function: nosuchfunction", 2}}}
-    }}
+    }, messages={{
+      content = {{ "Press ENTER or type command to continue", 4}},
+      kind = "return_prompt"
+    }}}
   end)
 
   it('implies ext_cmdline and ignores cmdheight', function()
