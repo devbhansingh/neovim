@@ -312,6 +312,15 @@ describe('ui/ext_messages', function()
       content = {{ "Press ENTER or type command to continue", 4 }},
       kind = "return_prompt"
     }}}
+
+    feed '<cr>'
+    screen:expect{grid=[[
+      ^                         |
+      {1:~                        }|
+      {1:~                        }|
+      {1:~                        }|
+      {1:~                        }|
+    ]]}
   end)
 
   it('shortmess-=S', function()
